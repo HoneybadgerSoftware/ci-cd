@@ -2,7 +2,9 @@ name: on-push
 on:
   workflow_call:
     secrets:
-      sonar_token:
+      SONAR_TOKEN:
+        required: true
+      GH_TOKEN:
         required: true
   push:
     branches:
