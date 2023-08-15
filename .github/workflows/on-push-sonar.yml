@@ -1,3 +1,4 @@
+#Temporary suspended from usage
 name: SonarCloud Scan
 on:
   workflow_call:
@@ -41,6 +42,6 @@ jobs:
 
       - name: Build and analyze
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Domyślny token GitHub, potrzebny do komentowania PR
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    # Token dla SonarCloud, dodaj go do sekretów repozytorium
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew sonarqube --info
