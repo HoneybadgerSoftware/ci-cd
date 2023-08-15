@@ -1,10 +1,24 @@
 name: SonarCloud Scan
 on:
+  workflow_call:
+    inputs:
+      sonar_token:
+        required: true
+        type: secret
+      gh_token:
+        required: true
+        type: secret
+    secrets:
+      sonar_token:
+        required: true
+      gh_token:
+        required: true
   push:
     branches:
       - master
   pull_request:
     types: [opened, synchronize, reopened]
+
 
 jobs:
   sonarcloud:
