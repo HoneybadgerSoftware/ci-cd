@@ -1,17 +1,8 @@
 name: on-push
 on:
   workflow_call:
-    inputs:
-      sonar_token:
-        required: true
-        type: secret
-      gh_token:
-        required: true
-        type: secret
     secrets:
       sonar_token:
-        required: true
-      gh_token:
         required: true
   push:
     branches:
